@@ -132,35 +132,31 @@ body {
     background: #ff8da1;
 }
 
-/* Tombol Kontak dengan Gradient */
+/* Tombol Kontak agar di Tengah */
+.contact-links {
+    display: flex;
+    flex-direction: column; /* Membuat isi card tersusun ke bawah */
+    align-items: center;    /* Ini kuncinya agar tombol ke TENGAH */
+    gap: 15px;              /* Jarak antar tombol kalau nanti kamu nambah WhatsApp */
+    padding: 10px 0;
+}
+
 .btn {
+    display: block;
+    width: 80%;             /* Agar tombol tidak terlalu lebar banget, tapi pas di HP */
+    max-width: 250px;       /* Batas lebar tombol agar tidak kepanjangan di laptop */
     text-align: center;
     text-decoration: none;
     background: linear-gradient(45deg, #ff8da1, #ffb6c1);
     color: white;
     padding: 14px;
-    border-radius: 18px;
+    border-radius: 20px;
     font-weight: bold;
     box-shadow: 0 6px 15px rgba(255, 141, 161, 0.3);
     transition: all 0.3s ease;
 }
 
 .btn:hover {
+    transform: scale(1.05); /* Sedikit membesar saat ditekan */
     box-shadow: 0 8px 20px rgba(255, 141, 161, 0.5);
-    filter: brightness(1.05);
-    letter-spacing: 1px; /* Teks agak merenggang pas di-hover */
-}
-
-footer {
-    text-align: center;
-    padding: 50px 20px;
-    font-size: 0.9rem;
-    color: #ffb6c1;
-    animation: fadeIn 2s infinite alternate;
-}
-
-/* Tambahan Animasi Fade In */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
 }
