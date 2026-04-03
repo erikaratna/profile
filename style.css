@@ -1,0 +1,124 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    /* Gradasi Baby Pink */
+    background: linear-gradient(180deg, #ffd1dc 0%, #fff0f5 100%);
+    color: #5d5d5d;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.font-funny {
+    font-family: 'Pacifico', cursive;
+    color: #ff8da1;
+}
+
+.container {
+    padding: 20px;
+    max-width: 500px; /* Dibatasi agar tampilan seperti HP meski di Desktop */
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+}
+
+.profile-frame {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border: 5px solid #ffb6c1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Judul Section */
+.section-title {
+    margin: 40px 0 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ff748c;
+}
+
+/* Gaya Kartu */
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bio-list {
+    list-style: none;
+}
+
+.bio-list li {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ffd1dc;
+    padding-bottom: 5px;
+}
+
+/* Grid Hobi */
+.hobi-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.hobi-item {
+    background: #ffb6c1;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Tombol Kontak */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    text-align: center;
+    text-decoration: none;
+    background: #ff8da1;
+    color: white;
+    padding: 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.8rem;
+    color: #ffb6c1;
+}
