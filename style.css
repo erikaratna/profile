@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    /* Gradasi Baby Pink */
-    background: linear-gradient(180deg, #ffd1dc 0%, #fff0f5 100%);
+    /* Gradasi Baby Pink lebih halus */
+    background: linear-gradient(180deg, #ffd1dc 0%, #fff0f5 50%, #ffe4e1 100%);
     color: #5d5d5d;
     line-height: 1.6;
     overflow-x: hidden;
@@ -17,12 +17,20 @@ body {
 .font-funny {
     font-family: 'Pacifico', cursive;
     color: #ff8da1;
+    text-shadow: 2px 2px 4px rgba(255, 141, 161, 0.2);
 }
 
 .container {
     padding: 20px;
-    max-width: 500px; /* Dibatasi agar tampilan seperti HP meski di Desktop */
+    max-width: 500px;
     margin: 0 auto;
+}
+
+/* --- ANIMASI BARU: Melayang (Floating) --- */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Hero Section */
@@ -31,94 +39,128 @@ body {
     padding: 60px 20px;
     background: white;
     border-radius: 0 0 50px 50px;
-    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+    /* Membuat header muncul dengan efek slide down */
+    animation: fadeInDown 1.2s ease-out;
 }
 
 .profile-frame {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto 20px;
-    border: 5px solid #ffb6c1;
+    border: 6px solid #ffb6c1;
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.5);
+    /* Efek melayang pada foto profil */
+    animation: float 3s ease-in-out infinite;
 }
 
 .profile-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.profile-frame:hover img {
+    transform: scale(1.1) rotate(3deg); /* Foto nge-zoom & miring dikit pas di-hover */
 }
 
 /* Judul Section */
 .section-title {
     margin: 40px 0 15px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #ff748c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* Gaya Kartu */
+/* Gaya Kartu dengan Efek Hover */
 .card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
 }
 
-.bio-list {
-    list-style: none;
+.card:hover {
+    transform: translateY(-5px); /* Kartu naik sedikit pas di-scroll/hover */
+    box-shadow: 0 15px 30px rgba(255, 182, 193, 0.3);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .bio-list li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     border-bottom: 1px dashed #ffd1dc;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
+    transition: padding-left 0.3s ease;
 }
 
-/* Grid Hobi */
+.bio-list li:hover {
+    padding-left: 10px; /* Geser dikit pas list-nya disentuh */
+    color: #ff748c;
+}
+
+/* Grid Hobi dengan Animasi Pop */
 .hobi-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
 }
 
 .hobi-item {
     background: #ffb6c1;
     color: white;
-    padding: 8px 15px;
-    border-radius: 15px;
+    padding: 10px 18px;
+    border-radius: 20px;
     font-weight: bold;
     font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Tombol Kontak */
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.hobi-item:hover {
+    transform: scale(1.1); /* Efek membal (pop) */
+    background: #ff8da1;
 }
 
+/* Tombol Kontak dengan Gradient */
 .btn {
     text-align: center;
     text-decoration: none;
-    background: #ff8da1;
+    background: linear-gradient(45deg, #ff8da1, #ffb6c1);
     color: white;
-    padding: 12px;
-    border-radius: 15px;
+    padding: 14px;
+    border-radius: 18px;
     font-weight: bold;
-    transition: transform 0.2s;
+    box-shadow: 0 6px 15px rgba(255, 141, 161, 0.3);
+    transition: all 0.3s ease;
 }
 
-.btn:active {
-    transform: scale(0.95);
+.btn:hover {
+    box-shadow: 0 8px 20px rgba(255, 141, 161, 0.5);
+    filter: brightness(1.05);
+    letter-spacing: 1px; /* Teks agak merenggang pas di-hover */
 }
 
 footer {
     text-align: center;
-    padding: 40px 20px;
-    font-size: 0.8rem;
+    padding: 50px 20px;
+    font-size: 0.9rem;
     color: #ffb6c1;
+    animation: fadeIn 2s infinite alternate;
+}
+
+/* Tambahan Animasi Fade In */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
